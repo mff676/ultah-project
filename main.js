@@ -20,13 +20,13 @@ const getLocation = () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, positionError);
   } else {
-    alert("Geolocation is not supported by this browser.")
+    alert("timezone is not supported by this browser.")
   }
 }
 
 
 function positionError() {
-  alert('Geolocation is not enabled. Please enable to use this feature');
+  alert('cannot access time zone. Please enable all permission to use this feature');
   let flipdown = document.getElementById('flipdown');
   flipdown.style.color = 'white';
   flipdown.style.background = 'red';
