@@ -1,8 +1,14 @@
 const supabaseUrl = 'https://pimncbqgwimhulzkxcyz.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpbW5jYnFnd2ltaHVsemt4Y3l6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjY3NTA1NDQsImV4cCI6MTk4MjMyNjU0NH0.d_aTa0ajbUvC7vOigTBBoNSoe3NvK4sExMUBvl7Yo5s'
 const database = supabase.createClient(supabaseUrl, supabaseKey);
+const hiddenFeature = document.getElementById('hidden');
 const dataStorage = JSON.parse(localStorage.getItem("user_detail"));
 console.log(dataStorage);
+hiddenFeature.addEventListener('dblclick', () => {
+  if (dataStorage !== null) {
+    localStorage.clear()
+  }
+})
 document.addEventListener('DOMContentLoaded', () => {
   if (dataStorage!== null) {
     let fullname = document.getElementById('name')
