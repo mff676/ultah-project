@@ -84,7 +84,7 @@ const userDataForm = (lt, lg) => {
         currentProgressStep: 2,
         confirmButtonText: 'OK',
         preConfirm: (value) => {
-          if (value != "2024-09-07") {
+          if (value != "2024-09-07" || value != "2006-09-07") {
             Swal.showValidationMessage('Wah aku dibohongin nih, kemarin bilang nya bukan tanggal itu')
             insertData(user.latitude, user.longitude, user.fullname, value)
           } else {
@@ -97,7 +97,8 @@ const userDataForm = (lt, lg) => {
       localStorage.setItem("user_detail", JSON.stringify(user)),
       Swal.fire("Okey, Enjoy yaa"),
       console.log('Data sudah diisi'),
-      countdownFunction()
+      countdownFunction(),
+    window.location.reload()
     ))
 }
 const insertData = async (ltd, lngd, fullname, date) => {
