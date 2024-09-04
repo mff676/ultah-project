@@ -4,8 +4,10 @@ const database = supabase.createClient(supabaseUrl, supabaseKey);
 const dataStorage = JSON.parse(localStorage.getItem("user_detail"));
 console.log(dataStorage);
 document.addEventListener('DOMContentLoaded', () => {
-  let fullname = document.getElementById('name')
-  fullname.innerText = "Sabar yaa " + dataStorage.fullname + "✌️" 
+  if (dataStorage!== null) {
+    let fullname = document.getElementById('name')
+    fullname.innerText = "Sabar yaa " + dataStorage.fullname + "✌️" 
+  }
   getLocation();
 });
 const getLocation = () => {
