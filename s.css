@@ -69,12 +69,30 @@
      background:  rgba(0,  0,  0,  0.575);
      display:  none;
  }
+
  .content2 .wa  {
      text-align:  center;
      display:  none;
  }
  .content2 .wa button  {
      background-image:  linear-gradient(to top left,  #ff009d,  #ff004c);
+     cursor: pointer;
+     padding:  7px 20px;
+     margin:  50px auto;
+     border-radius:  10px;
+     font-size:  1.1rem;
+     font-weight:  600;
+     color:  white;
+     border:  2px solid white;
+     animation:  animasi2 1s ease infinite;
+ }
+ .content2 .send  {
+     text-align:  center;
+     display:  none;
+ }
+ .content2 .send button  {
+     background-image:  linear-gradient(to top left,  #ff009d,  #ff004c);
+     cursor: pointer;
      padding:  7px 20px;
      margin:  50px auto;
      border-radius:  10px;

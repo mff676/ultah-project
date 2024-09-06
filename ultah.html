@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,33 +8,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <!-- <script src="https://dekatutorial.github.io/drk/s.js"></script> -->
-    <title>It's Your Birthday Araaa</title>
+    <title>It's Your Birthday Ara</title>
     <link rel="stylesheet" href="s.css" />
 </head>
-
 <body>
-    <div class="bg"></div>
+    <div class="bg">
+    </div>
 
     <div class="content animate__animated animate__bounceInDown">
       <div class="card">
-        <div>
-          <h3>Ada pesan buat kamu</h3>
+          <div>
+              <h3>Ada pesan buat kamu</h3>
+            </div>
+            <img class="surat" id="email" src="https://dekatutorial.github.io/spesial_mail.png" alt="MAIL" />
+            <p>Tekan untuk membuka</p>
         </div>
-        <img class="surat" src="https://dekatutorial.github.io/spesial_mail.png" alt="MAIL" />
-        <p>Tekan untuk membuka</p>
-      </div>
     </div>
-    <div class="content2">
-      <div class="paper animate__animated animate__bounceIn" id="content2">
-        <div class="paper-content">
-          <textarea class="pesan" disabled></textarea>
+    <div class="content2" id="content2">
+      <div class="paper animate__animated animate__bounceIn">
+          <div class="paper-content">
+              <textarea class="pesan" disabled="true"></textarea>
+            </div>
         </div>
-      </div>
-      <div class="wa animate__animated animate__fadeInUp">
-        <button>Balas Pesan</button>
-      </div>
+        <div id="reply" class="wa animate__animated animate__fadeInUp">
+            <button>Balas Pesan</button>
+        </div>
+        <div id="send" class="send animate__animated animate__fadeInUp">
+            <button>Kirim Pesan</button>
+        </div>
     </div>
-
- 
+    <script src="s.js"></script>
+    <script src="confetti.js"></script>
+</body>
 </html>
