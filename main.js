@@ -41,7 +41,11 @@ const showPosition = async (position) => {
   console.log("Latitude: " + position.coords.latitude +
     "Longitude: " + position.coords.longitude);
     if (dataStorage === null) {
-      userDataForm(position.coords.latitude, position.coords.longitude)
+      userDataForm(position.coords.latitude, position.coords.longitude).then(() => (
+        setTimeout(() => {
+          location.reload()
+        }, 2000)
+      ))
     } else {
       insertData(dataStorage.latitude, dataStorage.longitude, dataStorage.fullname, dataStorage.birthday)
       countdownFunction()
