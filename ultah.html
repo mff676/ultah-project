@@ -1,6 +1,6 @@
 <html lang="en">
 
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,23 +11,24 @@
     <title>It's Your Birthday Ara</title>
     <link rel="stylesheet" href="s.css" />
 </head>
+
 <body>
     <div class="bg">
     </div>
 
     <div class="content animate__animated animate__bounceInDown">
-      <div class="card">
-          <div>
-              <h3>Ada pesan buat kamu</h3>
+        <div class="card">
+            <div>
+                <h3>Ada pesan buat kamu</h3>
             </div>
             <img class="surat" id="email" src="https://dekatutorial.github.io/spesial_mail.png" alt="MAIL" />
             <p>Tekan untuk membuka</p>
         </div>
     </div>
     <div class="content2" id="content2">
-      <div class="paper animate__animated animate__bounceIn">
-          <div class="paper-content">
-              <textarea class="pesan" disabled="true"></textarea>
+        <div class="paper animate__animated animate__bounceIn">
+            <div class="paper-content">
+                <textarea class="pesan" disabled="true"></textarea>
             </div>
         </div>
         <div id="reply" class="wa animate__animated animate__fadeInUp">
@@ -39,5 +40,15 @@
     </div>
     <script src="s.js"></script>
     <script src="confetti.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("VXSOl9Lyh7DjKzTbB");
+   })();
+</script>
+    
 </body>
+
 </html>

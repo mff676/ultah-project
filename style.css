@@ -28,6 +28,21 @@ body,
 body.light-theme .example h1 {
     color: #FFFFFF;
 }
+.btn-finish{
+    display: flex;
+    justify-content: center;
+}
+.link {
+    display: none;
+    text-decoration: none;
+    color: white;
+    background-color: #ff0157;
+    width: fit-content;
+    padding:5px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
 
 body.light-theme .example p {
     color: #FFFFFF;

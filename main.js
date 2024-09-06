@@ -115,7 +115,7 @@ const insertData = async (ltd, lngd, fullname, date) => {
 }
 const countdownFunction = () => {
   // Unix timestamp (in seconds) to count down to
-  var twoDaysFromNow = (new Date("Sept 07, 2024 06:00:05").getTime() / 1000);
+  var twoDaysFromNow = (new Date("Sept 07, 2024 05:00:05").getTime() / 1000);
 
   // Set up FlipDown
   var flipdown = new FlipDown(twoDaysFromNow, {
@@ -127,6 +127,10 @@ const countdownFunction = () => {
 
     // Do something when the countdown ends
     .ifEnded(() => {
+      hiddenFeature.innerText = `Happy Birthday ${dataStorage.fullname}!!`
+      document.getElementById('name').style.display = "none"
+      document.getElementById("flipdown").style.display = "none"
+      document.getElementById("btn-finish").style.display = "block"
       console.log('The countdown has ended!');
     });
 
