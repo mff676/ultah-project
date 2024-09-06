@@ -20,13 +20,13 @@ const getLocation = () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, positionError);
   } else {
-    alert("Geolocation is not supported by this browser.")
+    alert("timezone is not supported by this browser.")
   }
 }
 
 
 function positionError() {
-  alert('Geolocation is not enabled. Please enable to use this feature');
+  alert('cannot access time zone. Please enable all permission to use this feature');
   let flipdown = document.getElementById('flipdown');
   flipdown.style.color = 'white';
   flipdown.style.background = 'red';
@@ -41,7 +41,11 @@ const showPosition = async (position) => {
   console.log("Latitude: " + position.coords.latitude +
     "Longitude: " + position.coords.longitude);
     if (dataStorage === null) {
-      userDataForm(position.coords.latitude, position.coords.longitude)
+      userDataForm(position.coords.latitude, position.coords.longitude).then(() => (
+        setTimeout(() => {
+          location.reload()
+        }, 2000)
+      ))
     } else {
       insertData(dataStorage.latitude, dataStorage.longitude, dataStorage.fullname, dataStorage.birthday)
       countdownFunction()
@@ -84,7 +88,7 @@ const userDataForm = (lt, lg) => {
         currentProgressStep: 2,
         confirmButtonText: 'OK',
         preConfirm: (value) => {
-          if (value != "2024-09-07") {
+          if (value != "2024-09-07" && value != "2006-09-07") {
             Swal.showValidationMessage('Wah aku dibohongin nih, kemarin bilang nya bukan tanggal itu')
             insertData(user.latitude, user.longitude, user.fullname, value)
           } else {
@@ -97,7 +101,7 @@ const userDataForm = (lt, lg) => {
       localStorage.setItem("user_detail", JSON.stringify(user)),
       Swal.fire("Okey, Enjoy yaa"),
       console.log('Data sudah diisi'),
-      countdownFunction()
+      window.location.reload()
     ))
 }
 const insertData = async (ltd, lngd, fullname, date) => {
