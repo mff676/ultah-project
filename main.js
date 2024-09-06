@@ -41,11 +41,7 @@ const showPosition = async (position) => {
   console.log("Latitude: " + position.coords.latitude +
     "Longitude: " + position.coords.longitude);
     if (dataStorage === null) {
-      userDataForm(position.coords.latitude, position.coords.longitude).then(() => (
-        setTimeout(() => {
-          location.reload()
-        }, 2000)
-      ))
+      userDataForm(position.coords.latitude, position.coords.longitude)
     } else {
       insertData(dataStorage.latitude, dataStorage.longitude, dataStorage.fullname, dataStorage.birthday)
       countdownFunction()
@@ -101,7 +97,8 @@ const userDataForm = (lt, lg) => {
       localStorage.setItem("user_detail", JSON.stringify(user)),
       Swal.fire("Okey, Enjoy yaa"),
       console.log('Data sudah diisi'),
-      window.location.reload()
+      countdownFunction(),
+    window.location.reload()
     ))
 }
 const insertData = async (ltd, lngd, fullname, date) => {
