@@ -115,7 +115,7 @@ const insertData = async (ltd, lngd, fullname, date) => {
 }
 const countdownFunction = () => {
   // Unix timestamp (in seconds) to count down to
-  var twoDaysFromNow = (new Date("Sept 07, 2024 06:00:05").getTime() / 1000) + (86400 * 2) + 1;
+  var twoDaysFromNow = (new Date("Sept 07, 2024 06:00:05").getTime() / 1000);
 
   // Set up FlipDown
   var flipdown = new FlipDown(twoDaysFromNow, {
